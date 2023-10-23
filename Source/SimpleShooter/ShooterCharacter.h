@@ -39,13 +39,16 @@ public:
 	 */
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 
+	UFUNCTION(BlueprintPure)
+	bool IsDead() const;
+
+	void Fire();
 
 private:
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void LookUpRate(float Value);
 	void LookRightRate(float Value);
-	void Fire();
 
 	UPROPERTY(EditAnywhere)
 	float RotationRate = 10;
